@@ -6,7 +6,8 @@ from botocore.exceptions import ClientError
 # Initialize the S3 client outside the handler.
 s3 = boto3.client('s3')
 
-BUCKET_NAME = 'file-metadata-uploads-robbie'
+import os
+BUCKET_NAME = os.environ['BUCKET_NAME']
 URL_EXPIRATION = 300  # seconds — presigned URL expires in 5 minutes
 
 

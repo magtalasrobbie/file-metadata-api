@@ -3,8 +3,10 @@ import boto3
 from botocore.exceptions import ClientError
 
 dynamodb = boto3.client('dynamodb')
-TABLE_NAME = 'file-metadata'
 
+import os
+
+TABLE_NAME = os.environ['TABLE_NAME']
 
 def lambda_handler(event, context):
     path_parameters = event.get('pathParameters')

@@ -8,8 +8,9 @@ from botocore.exceptions import ClientError
 s3 = boto3.client('s3')
 dynamodb = boto3.client('dynamodb')
 
-TABLE_NAME = 'file-metadata'
+import os
 
+TABLE_NAME = os.environ['TABLE_NAME']
 
 def lambda_handler(event, context):
     for record in event['Records']:
