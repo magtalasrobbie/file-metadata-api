@@ -1,12 +1,12 @@
 import json
 import boto3
+import os
 import uuid
 from botocore.exceptions import ClientError
 
 # Initialize the S3 client outside the handler.
 s3 = boto3.client('s3')
 
-import os
 BUCKET_NAME = os.environ['BUCKET_NAME']
 URL_EXPIRATION = 300  # seconds — presigned URL expires in 5 minutes
 

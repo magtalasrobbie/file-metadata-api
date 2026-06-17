@@ -1,14 +1,13 @@
 import json
 import boto3
 import urllib.parse
+import os
 from datetime import datetime, timezone
 from botocore.exceptions import ClientError
 
 # Initialize clients outside the handler for reuse across invocations.
 s3 = boto3.client('s3')
 dynamodb = boto3.client('dynamodb')
-
-import os
 
 TABLE_NAME = os.environ['TABLE_NAME']
 
